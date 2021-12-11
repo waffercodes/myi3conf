@@ -43,7 +43,7 @@ exec --no-startup-id xsettingsd &
 exec --no-startup-id xfce4-power-manager
 
 # Common stuff
-bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png'
+bindsym Print exec scrot 'Pictures/Screens/Cheese_%a-%d%b%y_%H.%M.png'
 
 #change volume
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
@@ -54,7 +54,7 @@ bindsym XF86AudioMute exec amixer set Master toggle
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec tilix
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -244,6 +244,7 @@ bar {
   status_command i3status
   position top
   output primary
+  separator_symbol "⛬"
 }
 
 bar {
@@ -258,11 +259,9 @@ bar {
     urgent_workspace   #FF5555 #FF5555 #F8F8F2
     binding_mode       #FF5555 #FF5555 #F8F8F2
   }
+  tray_output none
   position top
   output HDMI1
-  output HDMI2
-  output VGA1
-  output VGA2
 }
 
 bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'run:'"
